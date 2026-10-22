@@ -49,6 +49,7 @@ h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:var(--on-green);text-decoration:none;
   font-weight:700;font-size:16px;padding:14px 22px;border-radius:6px}
 .btn:hover{filter:brightness(1.08)}
+.btn.alt{background:transparent;color:var(--green);border:2px solid var(--green);padding:12px 20px}
 figure{margin:0}
 figure img{display:block;width:100%;height:auto;border-radius:6px;background:var(--surface)}
 figcaption{font-size:13px;color:var(--muted);margin-top:8px}
@@ -134,6 +135,21 @@ figcaption{font-size:13px;color:var(--muted);margin-top:8px}
 .note{margin:18px 0 0;padding:14px 16px;border-left:3px solid var(--green);background:var(--green-soft);font-size:15px}
 .pb{margin:16px 0 0;font-size:15px}
 
+/* Grinoができること */
+.cando{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
+.cando .c{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;padding:14px 0;border-top:1px solid var(--line)}
+.cando .n{width:28px;height:28px;border-radius:50%;background:var(--green);color:var(--on-green);font-weight:700;font-size:13px;display:grid;place-items:center;margin-top:2px}
+.cando b{display:block;font-size:16px;line-height:1.5}
+.cando p{margin:4px 0 0;font-size:14.5px;color:var(--muted);line-height:1.65}
+.cando .c.hl b{color:var(--green)}
+.cando-note{margin:14px 0 0;font-size:13px;color:var(--muted)}
+
+/* 導入先 */
+.clients-h{font-size:16px;font-weight:700;margin:34px 0 6px;padding-top:22px;border-top:1px solid var(--line)}
+.clients-lead{margin:0 0 10px;font-size:14.5px;color:var(--muted)}
+ul.clients{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px 28px;align-items:baseline}
+ul.clients li{font-family:var(--display);font-weight:900;font-size:20px;letter-spacing:.02em;color:var(--muted)}
+
 /* 商品 */
 .cats{display:grid;gap:10px;margin:0 0 22px}
 .cat{display:grid;grid-template-columns:9em 1fr;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:15px}
@@ -197,7 +213,10 @@ footer{padding-block:22px 36px;font-size:12px;color:var(--muted)}
   br.pc{display:none}
 }
 @media (max-width:560px){
-  .cards2,.forms,ul.awards,.scale{grid-template-columns:1fr}
+  .cards2,.forms,ul.awards,.scale,.cando{grid-template-columns:1fr}
+  .cando{gap:0}
+  ul.clients{gap:6px 20px}
+  ul.clients li{font-size:18px}
   .scale{gap:14px}
   .scale .s{display:grid;grid-template-columns:8.6em 1fr;gap:12px;align-items:baseline;padding-top:10px}
   .scale .num{font-size:30px}
@@ -421,6 +440,24 @@ html{scroll-behavior:smooth}
 
 <section>
   <div class="row">
+    <h2>販売先の声から<br class="pc">容器の開発まで、<br class="pc">Grinoが担う<span>Grinoができること</span></h2>
+    <div>
+      <p class="sublead">つくることは貴社に、売ることと設計はGrinoに。提案に要るものは、Grinoがそろえます。</p>
+      <div class="cando">
+        <div class="c"><span class="n">1</span><div><b>販売先の求める品を、先につかむ</b><p>給食会社や小売との商談から、求められる品目、量目、価格帯を把握します。</p></div></div>
+        <div class="c"><span class="n">2</span><div><b>販売契約と、受発注・請求の窓口</b><p>販売先との契約、注文のとりまとめ、請求までGrinoが担います。</p></div></div>
+        <div class="c hl"><span class="n">3</span><div><b>新素材の容器を、ゼロから開発</b><p>容器メーカーと協力して、CPET素材のホテルパン規格の容器をつくりました。冷凍から加熱、提供まで同じ容器です。</p></div></div>
+        <div class="c hl"><span class="n">4</span><div><b>販売先の利益改善まで、試算して提案</b><p>産業給食の事業者に、拠点ごとの人件費と食材費がどう変わるかを試算し、採用の判断材料にしてもらいます。</p></div></div>
+        <div class="c"><span class="n">5</span><div><b>献立と商品規格の設計</b><p>8週間の献立、規格書、表示、温め方の手順まで整えます。</p></div></div>
+        <div class="c"><span class="n">6</span><div><b>販売先の反応を、貴社に戻す</b><p>試食の結果や要望を伝え、次の商品づくりに活かします。</p></div></div>
+      </div>
+      <p class="cando-note">3と4は、商品を卸すだけの取引にはない、Grinoならではの働きです。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="row">
     <h2>主菜でも副菜でも、<br class="pc">1品から<span>提案してほしい商品</span></h2>
     <div>
       <dl class="cats">
@@ -523,6 +560,9 @@ html{scroll-behavior:smooth}
     <li>日経クロストレンド「未来の市場をつくる100社 2026年版」に選出</li>
     <li>提携工場7社と、品目の設計と見積を進行中</li>
   </ul>
+  <h3 class="clients-h">これまでに食事を届けた会社</h3>
+  <p class="clients-lead">オフィス向けのサラダ宅配で、毎日の昼食を届けていました。</p>
+  <ul class="clients"><li>Apple</li><li>サイバーエージェント</li><li>LINE</li><li>DeNA</li><li>Spotify</li></ul>
 </section>
 
 <section id="contact">
@@ -538,6 +578,8 @@ html{scroll-behavior:smooth}
       <a class="btn" href="mailto:info@grino.life?subject=%E6%8F%90%E6%90%BA%E5%B7%A5%E5%A0%B4%E3%81%AE%E9%9D%A2%E8%AB%87%E5%B8%8C%E6%9C%9B&amp;body=%E4%BC%9A%E7%A4%BE%E5%90%8D%E3%81%A8%E3%81%8A%E5%90%8D%E5%89%8D%EF%BC%9A%0A%E5%BE%97%E6%84%8F%E3%81%AA%E5%95%86%E5%93%81%EF%BC%9A%0A%E9%9D%A2%E8%AB%87%E3%81%AE%E5%80%99%E8%A3%9C%E6%97%A5%E6%99%82%EF%BC%883%E3%81%A4%E3%81%BB%E3%81%A9%EF%BC%89%EF%BC%9A%0A">メールで申し込む</a>
       <div class="mail"><code id="addr">info@grino.life</code><button class="copy" id="copy" type="button">アドレスをコピー</button></div>
     </div>
+    <p class="company" style="margin-top:22px;color:var(--fg)">日程を選んで、そのまま面談を予約することもできます。</p>
+    <div class="actions" style="margin-top:10px"><a class="btn alt" href="https://timerex.net/s/yu.hosoi_de48/01be7077" target="_blank" rel="noopener">細井との面談を予約する</a></div>
     <p class="company">Red Yellow And Green 株式会社（Grino）　代表取締役 細井 優<br>東京都新宿区百人町1-10-15 <span class="nb">JR新大久保駅ビル4F</span>　<a href="https://grino.life/" target="_blank" rel="noopener">grino.life</a></p>
   </div>
 </section>
